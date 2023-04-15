@@ -42,3 +42,5 @@ def predict_image():
     else:
         # Render the form page to upload an image
         return render_template('form.html')
+if __name__ == '__main__':
+    app.run()
