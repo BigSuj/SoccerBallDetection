@@ -40,7 +40,7 @@ def predict_image():
         # Render the results page with the predicted class label
         return render_template('results.html', class_label=class_label)
     else:
-        # Render the form page to upload an image
+        # Render the form page to upload an imag
         return render_template('form.html')
 if __name__ == '__main__':
     app.run()
