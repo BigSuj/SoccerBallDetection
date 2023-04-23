@@ -26,7 +26,6 @@ jobs:
         with:
           vercel-token: EPSXcuDR4HDwg3WGfmk5gqFc
           vercel_project_id: prj_C86RrX9UdmsJM8SeG3OvJh3wjNOD
-          scope: deployment
           build_command: 'python3 app.py'
           production_branch: main
 
