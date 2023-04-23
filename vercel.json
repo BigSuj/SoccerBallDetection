@@ -1,5 +1,0 @@
-{
-  "rewrites": [
-    { "destination": "app.py" }
-  ]
-}
