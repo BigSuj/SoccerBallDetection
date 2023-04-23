@@ -1,0 +1,32 @@
+name: Vercel Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip3 install -r requirements.txt
+
+      - name: Build and deploy
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel_token: EPSXcuDR4HDwg3WGfmk5gqFc
+          vercel_project_id: <YOUR_VERCEL_PROJECT_ID>
+          vercel_scope: deployment
+          vercel_org_id: <YOUR_VERCEL_ORG_ID>
+          build_command: 'python3 app.py'
+          production_branch: main
