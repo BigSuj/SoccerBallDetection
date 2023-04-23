@@ -5,4 +5,5 @@ images.cv_axvaa9mfe9svy7cliehmms/
 preprocessed_data_batches/
 soccer_ball_folder/
 venv/
-cnn_model.h5
+
+obj_model.h5
