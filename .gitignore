@@ -7,3 +7,4 @@ soccer_ball_folder/
 venv/
 
 obj_model.h5
+_cnn_model.h5
