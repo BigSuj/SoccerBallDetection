@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Set up Python virtual environment
+        run: python3 -m venv venv
+
+      - name: Activate Python virtual environment
+        run: source venv/bin/activate
 
       - name: Set up Python
         uses: actions/setup-python@v2
