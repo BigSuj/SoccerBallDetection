@@ -23,4 +23,6 @@ jobs:
 
       - name: Build and deploy
         uses: amondnet/vercel-action@v20
+        with:
+          vercel_token: EPSXcuDR4HDwg3WGfmk5gqFc
 
