@@ -1,14 +1,14 @@
 from flask import Flask, request, render_template
 import numpy as np
 from PIL import Image
-from tensorflow import keras
+import keras
 
 
 app = Flask(__name__)
 
 # Load the trained model and class names
 
-model = keras.models.load_model('cnn_model.h5')
+model = keras.models.load_model('_cnn_model.h5')
 class_names = ['Not a soccer ball', 'soccer ball']  # list of class names
 
 # Define a function to preprocess the image
