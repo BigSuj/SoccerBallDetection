@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Load the trained model and class names
 
-sess = ort.InferenceSession("model.onnx")
+sess = ort.InferenceSession("_model.onnx")
 input_name = sess.get_inputs()[0].name
 output_name = sess.get_outputs()[0].name
 class_names = ['Not a soccer ball', 'soccer ball']  # list of class names
