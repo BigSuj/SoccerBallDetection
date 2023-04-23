@@ -27,4 +27,5 @@ jobs:
           vercel-token: EPSXcuDR4HDwg3WGfmk5gqFc
           vercel-project-id: prj_C86RrX9UdmsJM8SeG3OvJh3wjNOD
           production-branch: main
+          vercel-org-id: Og7rlrLPk7eNzgXT3Eea9OFf
 
