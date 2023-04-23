@@ -7,18 +7,18 @@ app = Flask(__name__)
 
 # Load the trained model and class names
 model = keras.models.load_model('obj_model.h5')
-class_names = [1,2,3,4,5,6,7,8,9,10]  # list of class names
+class_names = ['Not a soccer ball', 'soccer ball']  # list of class names
 
 # Define a function to preprocess the image
 def preprocess_image(image):
     # Resize the image to match the input shape of the model
-    image = image.resize((32, 32))
+    image = image.resize((224, 224))
+    image = image.convert('RGB')
     
     # Convert the image to a NumPy array and scale the pixel values to [0, 1]
-    x = np.asarray(image) / 255.0
-    
-    # Add a batch dimension to the array
+    x = np.array(image, dtype=np.float32) / 255.0
     x = np.expand_dims(x, axis=0)
+    
     
     return x
 
@@ -43,4 +43,4 @@ def predict_image():
         # Render the form page to upload an imag
         return render_template('form.html')
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8000)
