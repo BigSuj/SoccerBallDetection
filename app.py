@@ -1,14 +1,16 @@
 from flask import Flask, request, render_template
 import numpy as np
 from PIL import Image
-import keras
+import onnxruntime as ort
 
 
 app = Flask(__name__)
 
 # Load the trained model and class names
 
-model = keras.models.load_model('_cnn_model.h5')
+sess = ort.InferenceSession("model.onnx")
+input_name = sess.get_inputs()[0].name
+output_name = sess.get_outputs()[0].name
 class_names = ['Not a soccer ball', 'soccer ball']  # list of class names
 
 # Define a function to preprocess the image
@@ -35,7 +37,7 @@ def predict_image():
         x = preprocess_image(img)
         
         # Make a prediction using the model
-        y = model.predict(x)
+        y = sess.run([output_name], {input_name: x})
         class_idx = np.argmax(y)
         class_label = class_names[class_idx]
         
